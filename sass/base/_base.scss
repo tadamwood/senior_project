@@ -1,0 +1,305 @@
+/* Eric Meyer's Reset CSS v2.0 - http://cssreset.com */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:none}table{border-collapse:collapse;border-spacing:0}
+
+body {
+	height:auto;
+	margin:0;
+	padding:0;
+	font-family:sans-serif;
+	box-sizing:border-box;
+}
+
+#container {
+	width:100%;
+	height:auto;
+}
+
+.hero {
+	width:100%;
+	height:550px;
+
+	position:relative;
+}
+
+#head {
+	width:100%;
+	height:50px;
+	background-color:$white;
+	border-bottom:2px solid purple;
+
+	position:relative;
+	top:0;
+	left:0;
+
+ 	h1 {
+ 		position:absolute;
+ 		top:7px;
+		left:0;
+		font-size:36px;
+		font-family:sans-serif;
+	}
+	
+	#head-login {
+		position:absolute;
+		right:190px;
+		img {
+			position:relative;
+			top:5px;
+			height:26;
+			width:26;
+			border-radius:13px;
+			background-color:purple;
+		}
+		p {
+			position:relative;
+			font-size:12px;
+			top:5px;
+			left:-2px;
+			color:purple;
+		}
+	}
+	#head-employer {
+		position:absolute;
+		right:0;
+		width:170px;
+		height:50px;
+		background-color:$green;
+
+		h1 {
+			position:relative;
+			font-size:15px;
+			left:10px;
+			font-style:bold;
+			color:$white;
+		}
+		p {
+			position:relative;
+			font-size:13px;
+			left:10px;
+			color:$white;
+			top:15px;
+		}
+	}
+}
+
+#hero-home {
+	background: url(../img/businessMan.png) no-repeat;
+	background-size:cover;
+
+	.hero-nav {
+		position:absolute;
+		height:auto;
+		width:200px;
+		color:$white;
+		text-align:center;
+		top:170px;
+
+		h1 {
+			font-size:45px;
+		}
+
+		img {
+			position:relative;
+			width:100px;
+			height:100px;
+			border-radius:50px;
+			top:30px;
+		}
+
+		a {
+			color:white;
+			text-decoration: none;
+		}
+
+		p {
+			position:relative;
+			top:50px;
+			font-size:16px;
+			width:200px;
+			padding:10px 5px;
+			border:1px solid $white;
+			background:rgba(240,242,244, 0.4);
+		}
+	}
+
+	.hero-left {
+		left:0;
+	}
+	.hero-right {
+		right:0;
+	}
+}
+
+#grey-search {
+	position:relative;
+	width:100%;
+	height:200px;
+	background-color:$light-grey;
+
+	.search-form {
+		position:relative;
+		top:80px;
+		margin:0 auto;
+		max-width:900px;
+		width:100%;
+
+		input[type="text"] {
+			width:340px;
+			height:55px;
+			border-radius:5px;
+			border:2px solid purple;
+			margin-right:30px;
+		}
+
+		input[placeholder] {
+			font-size:20px;
+			padding-left:20px;
+		}
+		input[type="submit"] {
+			width:125px;
+			height:55px;
+			color:$white;
+			background-color:purple;
+			border:0;
+			box-shadow: 0 0;
+			font-size:20px;
+		}
+	}
+
+	a {
+		color:purple;
+		text-decoration: underline;
+	}
+	p {
+		position:relative;
+		font-size:16px;
+		float:right;
+		margin-right:55px;
+		top:70px;
+	}
+}
+
+#home-content {
+	position:relative;
+	padding:50px 0 50px 0;
+	max-width:1400px;
+	width:100%;
+	height:270px;
+	margin:0 auto;
+
+	#resume-pre, #popular-searches, #top-employers {
+		position:relative;
+		width:30%;
+		height:auto;
+		float:left;
+	}
+
+	#resume-pre {
+		background-color:$light-grey;
+		border:1px solid purple;
+		margin-right:3%;
+
+		h1 {
+			position:relative;
+			font-size:20px;
+			color:purple;
+			padding:10px 0 10px 20px;
+			border-bottom:1px solid purple;
+
+			img {
+				width:26px;
+				height:30px;
+				margin-right:20px;
+			}
+
+			a {
+				color:purple;
+				text-decoration: none;
+			}
+		}
+
+		.resume-section {
+			width:45%;
+			float:left;
+			padding:2%;
+
+			h2 {
+				font-size:16px;
+				color:purple;
+				margin-bottom:10px;
+			}
+
+			p {
+				font-size:16px;
+			}
+
+		}
+
+		.border-right {
+				border-right:1px solid purple;
+		}
+	}
+
+	#popular-searches, #top-employers {
+		margin-right:3%;
+
+		h1 {
+			font-size:20px;
+			margin-bottom:15px;
+		}
+
+		a {
+			color:purple;
+			text-decoration: none;
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+
+		li {
+			margin-bottom:1px;
+		}
+	}
+
+	.left, .right {
+		width:46%;
+		float:left;
+		margin-right:1%;
+	}
+}
+
+#footer {
+	position:relative;
+	width:100%;
+	height:auto;
+	background-color:$light-grey;
+	text-align:center;
+
+	img {
+		position:relative;
+		margin-top:30px;
+
+	}
+
+	ul {
+		position:relative;
+		top:20px;
+		line-height:-10;
+
+		li {
+			display:inline;
+
+			a {
+				color:$dark-grey;
+				text-decoration: none;
+			}
+		}
+	}
+
+	p {
+		color:gray;
+		font-size:12px;
+	}
+}
+

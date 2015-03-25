@@ -1,0 +1,56 @@
+@import url(http://fonts.googleapis.com/css?family=Bad+Script|Raleway:500,700,400,300);
+// font-family: 'Bad Script', cursive;
+// font-family: 'Raleway', sans-serif;
+
+$body-font: 'Raleway', sans-serif;
+$head-font: 'Bad Script', cursive;
+$body-light: 300;
+$body-normal: 400;
+$body-medium: 500;
+$body-bold: 700;
+
+$black: #141318;
+$dark-grey: #2B2A2C;
+$green: #A8C73F;
+$light-grey: #ecf0f1;
+$white-grey: #F3F3F3;
+$white: #FDFDFD;
+
+
+
+//responsive
+	//global breaks
+	$tiny: 320;
+	$small: 480;
+	$phone: 640;
+	$phone-l: 768;
+	$tablet: 960;
+	$tablet-l: 1024;
+	$full: 1080; //set to the same as wrapper-width
+	$desktop: 1280;
+
+	//building media queries
+	@mixin tiny() {
+		@include respond-to($tiny) { @content;}
+	}
+	@mixin small() {
+		@include respond-to($small) { @content;}
+	}
+	@mixin phone() {
+		@include respond-to($phone) { @content;}
+	}
+	@mixin phone-l() {
+		@include respond-to($phone-l) { @content;}
+	}
+	@mixin tablet() {
+		@include respond-to($tablet) { @content;}
+	}
+	@mixin tablet-l() {
+		@include respond-to($tablet-l) { @content;}
+	}
+	@mixin full() {
+		@include respond-to($full) { @content;}
+	}
+	@mixin desktop() {
+		@include respond-to($desktop) { @content;}
+	}
