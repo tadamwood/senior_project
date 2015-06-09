@@ -45,7 +45,7 @@
 		<!-- Start Search Bar -->
 			<div id="grey-search">
 				<div class="container">
-					<form action="post" method="search_preview.php" class="search-form">
+					<form action="search_preview.php" method="post" class="search-form">
 						<input type="text" name="jobs" placeholder="Search for Jobs">
 						<input type="text" name="location" placeholder="Location">
 						<input type="submit" name="search" value="Search">
@@ -100,7 +100,42 @@
 					<h1>> Search Specifications</h1>
 					<h2>sort by: <a href="">relavance</a> - <a href="">date</a></h2>
 				</div>
-				<div class="search-result-pre">
+
+				<?php
+					$link = mysqli_connect("localhost", "root", "", "jobsearch");
+					mysqli_select_db($link, "search");
+
+					if(isset($_POST['search'])) {
+						$job_title = $_POST['jobs'];
+						$job_location = $_POST['location'];
+
+						$run = mysqli_query($link, "select * from search where keywords like '%$job_title%' ");
+
+						while($row=mysqli_fetch_array($run,MYSQLI_BOTH)) {
+							//create the variables according to the table rows here
+							$position = $row['position'];
+							$company = $row['company'];
+							$date = $row['date'];
+							$location = $row['location'];
+							$link = $row['link'];
+							$image = $row['image'];
+							$desc = $row['desc'];
+
+							echo "
+								<div class='search-result-pre'>
+									<div class='nine columns'>
+										<h1><a href=''>$position</a></h1>
+										<h2>$company</h2>
+										<h3>$date</h3>
+										<h4>$location</h4>
+								</div>
+								<img  class='two columns' src='$image' alt='$company image'>
+							</div>
+							";
+						}
+					}
+				?>
+				<!-- <div class="search-result-pre">
 					<div class="nine columns">
 						<h1><a href="">Design Director</a></h1>
 						<h2>Uline</h2>
@@ -108,97 +143,8 @@
 						<h4>Milwakee, WI</h4>
 					</div>
 					<img  class="two columns" src="http://placehold.it/100x75" alt="">
-				</div>
-				<div class="search-result-pre">
-					<div class="nine columns">
-						<h1><a href="">Design Director</a></h1>
-						<h2>Uline</h2>
-						<h3>7 days ago</h3>
-						<h4>Milwakee, WI</h4>
-					</div>
-					<img  class="two columns" src="http://placehold.it/100x75" alt="">
-				</div>
-				<div class="search-result-pre">
-					<div class="nine columns">
-						<h1><a href="">Design Director</a></h1>
-						<h2>Uline</h2>
-						<h3>7 days ago</h3>
-						<h4>Milwakee, WI</h4>
-					</div>
-					<img  class="two columns" src="http://placehold.it/100x75" alt="">
-				</div>
-				<div class="search-result-pre">
-					<div class="nine columns">
-						<h1><a href="">Design Director</a></h1>
-						<h2>Uline</h2>
-						<h3>7 days ago</h3>
-						<h4>Milwakee, WI</h4>
-					</div>
-					<img  class="two columns" src="http://placehold.it/100x75" alt="">
-				</div>
-				<div class="search-result-pre">
-					<div class="nine columns">
-						<h1><a href="">Design Director</a></h1>
-						<h2>Uline</h2>
-						<h3>7 days ago</h3>
-						<h4>Milwakee, WI</h4>
-					</div>
-					<img  class="two columns" src="http://placehold.it/100x75" alt="">
-				</div>
-				<div class="search-result-pre">
-					<div class="nine columns">
-						<h1><a href="">Design Director</a></h1>
-						<h2>Uline</h2>
-						<h3>7 days ago</h3>
-						<h4>Milwakee, WI</h4>
-					</div>
-					<img  class="two columns" src="http://placehold.it/100x75" alt="">
-				</div>
-				<div class="search-result-pre">
-					<div class="nine columns">
-						<h1><a href="">Design Director</a></h1>
-						<h2>Uline</h2>
-						<h3>7 days ago</h3>
-						<h4>Milwakee, WI</h4>
-					</div>
-					<img  class="two columns" src="http://placehold.it/100x75" alt="">
-				</div>
-				<div class="search-result-pre">
-					<div class="nine columns">
-						<h1><a href="">Design Director</a></h1>
-						<h2>Uline</h2>
-						<h3>7 days ago</h3>
-						<h4>Milwakee, WI</h4>
-					</div>
-					<img  class="two columns" src="http://placehold.it/100x75" alt="">
-				</div>
-				<div class="search-result-pre">
-					<div class="nine columns">
-						<h1><a href="">Design Director</a></h1>
-						<h2>Uline</h2>
-						<h3>7 days ago</h3>
-						<h4>Milwakee, WI</h4>
-					</div>
-					<img  class="two columns" src="http://placehold.it/100x75" alt="">
-				</div>
-				<div class="search-result-pre">
-					<div class="nine columns">
-						<h1><a href="">Design Director</a></h1>
-						<h2>Uline</h2>
-						<h3>7 days ago</h3>
-						<h4>Milwakee, WI</h4>
-					</div>
-					<img  class="two columns" src="http://placehold.it/100x75" alt="">
-				</div>
-				<div class="search-result-pre">
-					<div class="nine columns">
-						<h1><a href="">Design Director</a></h1>
-						<h2>Uline</h2>
-						<h3>7 days ago</h3>
-						<h4>Milwakee, WI</h4>
-					</div>
-					<img  class="two columns" src="http://placehold.it/100x75" alt="">
-				</div>
+				</div> -->
+				
 
 				<div class="search-page-switch">
 					<p>Previous 1 2 3 4 5 6 7 Next</p>
