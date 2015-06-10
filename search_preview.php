@@ -97,7 +97,7 @@
 			<!-- Search Results -->
 			<div class="nine columns">
 				<div id="search-specifics">
-					<h1>> Search Specifications</h1>
+					<h1>Search Specifications: <?php echo $specifications; ?></h1>
 					<h2>sort by: <a href="">relavance</a> - <a href="">date</a></h2>
 				</div>
 
@@ -108,6 +108,7 @@
 					if(isset($_POST['search'])) {
 						$job_title = $_POST['jobs'];
 						$job_location = $_POST['location'];
+						$specifications = $POST['jobs']. "in" . $_POST['location'];
 
 						$run = mysqli_query($link, "select * from search where keywords like '%$job_title%' ");
 
