@@ -25,22 +25,25 @@
 		<!-- Start Header Bar -->
 		<div id="head">
 			<div class="head-content">
-				<h1 class="nine columns">Site Name</h1>
-				<a href="">
-				<div id="head-login" class="two columns">
+				<h1 class="nine columns"><a href="index.html"><img src="img/logo.png" alt="lgbt safe logo"></a></h1>
+				<!-- <a href="">
+				 <div id="head-login" class="two columns">
 					<img src="http://placehold.it/26x26" alt="">
 					<p>Login</p>
-				</div>
-				</a>
-				<a href="">
+				</div> 
+				</a> -->
+				<a href="post_job.php">
 				<div id="head-employer" class="four columns">
 					<h1>Employers</h1>
-					<p>Post Jobs and Find Talent</p>
+					<p>Post Jobs</p>
 				</div>
 				</a>
 			</div>
 		</div>
 		<!-- End Header Bar -->
+		<div id="search_hero" class="hero">
+			
+		</div>
 
 		<!-- Start Search Bar -->
 			<div id="grey-search">
@@ -61,19 +64,19 @@
 			<div id="side-bar" class="three columns">
 				<h1>Popular Searches:</h1>
 					<ul>
-						<li><a href="">Lorem</a></li>
-						<li><a href="">Lorem</a></li>
-						<li><a href="">Lorem</a></li>
-						<li><a href="">Lorem</a></li>
-						<li><a href="">Lorem</a></li>
-						<li><a href="">Lorem</a></li>
-						<li><a href="">Lorem</a></li>
-						<li><a href="">Lorem</a></li>
-						<li><a href="">Lorem</a></li>
-						<li><a href="">Lorem</a></li>
-						<li><a href="">Lorem</a></li>
-						<li><a href="">Lorem</a></li>
-						<li><a href="">Lorem</a></li>
+						<li><a href="">Graphic Design</a></li>
+						<li><a href="">Web Design</a></li>
+						<li><a href="">UX</a></li>
+						<li><a href="">Law</a></li>
+						<li><a href="">Childcare</a></li>
+						<li><a href="">Nurse</a></li>
+						<li><a href="">San Francisco</a></li>
+						<li><a href="">New York</a></li>
+						<li><a href="">Retail</a></li>
+						<li><a href="">Accounting</a></li>
+						<li><a href="">Project Management</a></li>
+						<li><a href="">Front-end Web Development</a></li>
+						<li><a href="">Customer Service</a></li>
 					</ul>
 					<h1>Top Employers:</h1>
 					<ul>
@@ -97,18 +100,19 @@
 			<!-- Search Results -->
 			<div class="nine columns">
 				<div id="search-specifics">
-					<h1>Search Specifications: <?php echo $specifications; ?></h1>
+					<h1>Search Specifications:</h1>
 					<h2>sort by: <a href="">relavance</a> - <a href="">date</a></h2>
 				</div>
 
 				<?php
-					$link = mysqli_connect("localhost", "root", "", "jobsearch");
+					$link = mysqli_connect("tadamwood.com", "
+tadamwoo_wo0463", "~Mtw3301246", "tadamwoo_jobsearch");
 					mysqli_select_db($link, "search");
 
 					if(isset($_POST['search'])) {
 						$job_title = $_POST['jobs'];
 						$job_location = $_POST['location'];
-						$specifications = $POST['jobs']. "in" . $_POST['location'];
+						// $specifications = $POST['jobs']. "in" . $_POST['location'];
 
 						$run = mysqli_query($link, "select * from search where keywords like '%$job_title%' ");
 
@@ -147,16 +151,16 @@
 				</div> -->
 				
 
-				<div class="search-page-switch">
+				<!-- <div class="search-page-switch">
 					<p>Previous 1 2 3 4 5 6 7 Next</p>
-				</div>
+				</div> -->
 			</div>
 			<!-- End Search Results -->
 
 			<!-- Start Search Bar -->
 			<div id="grey-search" class="purple twelve columns">
 				<div class="container">
-					<form action="post" method="" class="search-form">
+					<form action="search_preview.php" method="post" class="search-form">
 						<input type="text" name="jobs" placeholder="Search for Jobs">
 						<input type="text" name="location" placeholder="Location">
 						<input type="submit" name="search" value="Search">
@@ -169,15 +173,15 @@
 			<!-- Start Footer -->
 			<div id="footer" class="twelve columns">
 				<div class="container">
-					<img src="http://placehold.it/42x42" alt="">
+					<a href="index.html"><img src="img/logo.png" alt="lgbt safe logo"></a>
 					<ul>
-						<li><a href="">Post Jobs |</a></li>
+						<li><a href="post_job.php">Post Jobs |</a></li>
 						<li><a href="">Search Resumes |</a></li>
 						<li><a href="">Find Jobs |</a></li>
 						<li><a href="">Resume Help</a></li>
 					</ul>
 					<ul>
-						<li><a href="">About [name] |</a></li>
+						<li><a href="">About LGBT Safe |</a></li>
 						<li><a href="">Work for [name] |</a></li>
 						<li><a href="">Advertise With Us |</a></li>
 						<li><a href="">Partner With Us</a></li>
@@ -193,7 +197,7 @@
 						<li><a href="">Contact Us |</a></li>
 						<li><a href="">Sitemap</a></li>
 					</ul>
-					<p>Copyright 2015 name</p>
+					<p>Copyright 2015 Thomas Wood</p>
 				</div>
 			</div>
 		<!-- End Footer -->
