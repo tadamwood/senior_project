@@ -66,8 +66,8 @@
 			</div> 
 
 			<?php
-				$link = mysqli_connect("tadamwood.com", "
-tadamwoo_wo0463", "~Mtw3301246", "tadamwood_jobsearch");
+				$link = mysqli_connect("localhost", "
+tadamwoo_thomas", "~Mtw3301246", "tadamwoo_jobsearch");
 				mysqli_select_db($link, "search");
 
 				if(isset($_POST['submit'])) {

@@ -80,19 +80,19 @@
 					</ul>
 					<h1>Top Employers:</h1>
 					<ul>
-						<li><a href="">Lorem</a></li>
-						<li><a href="">Lorem</a></li>
-						<li><a href="">Lorem</a></li>
-						<li><a href="">Lorem</a></li>
-						<li><a href="">Lorem</a></li>
-						<li><a href="">Lorem</a></li>
-						<li><a href="">Lorem</a></li>
-						<li><a href="">Lorem</a></li>
-						<li><a href="">Lorem</a></li>
-						<li><a href="">Lorem</a></li>
-						<li><a href="">Lorem</a></li>
-						<li><a href="">Lorem</a></li>
-						<li><a href="">Lorem</a></li>
+						<li><a href="">Google</a></li>
+						<li><a href="">Twitter</a></li>
+						<li><a href="">Younoodle</a></li>
+						<li><a href="">Oracle</a></li>
+						<li><a href="">Twitch.tv</a></li>
+						<li><a href="">Firefox</a></li>
+						<li><a href="">Walmart</a></li>
+						<li><a href="">Target</a></li>
+						<li><a href="">Best Buy</a></li>
+						<li><a href="">Nescafe</a></li>
+						<li><a href="">Starbucks</a></li>
+						<li><a href="">Sony</a></li>
+						<li><a href="">Nintendo</a></li>
 					</ul>
 			</div>
 			<!-- End Side Bar -->
@@ -105,8 +105,8 @@
 				</div>
 
 				<?php
-					$link = mysqli_connect("tadamwood.com", "
-tadamwoo_wo0463", "~Mtw3301246", "tadamwoo_jobsearch");
+					$link = mysqli_connect("localhost", "
+tadamwoo_thomas", "~Mtw3301246", "tadamwoo_jobsearch");
 					mysqli_select_db($link, "search");
 
 					if(isset($_POST['search'])) {
@@ -129,7 +129,7 @@ tadamwoo_wo0463", "~Mtw3301246", "tadamwoo_jobsearch");
 							echo "
 								<div class='search-result-pre'>
 									<div class='nine columns'>
-										<h1><a href=''>$position</a></h1>
+										<h1><a href='result_preview.html'>$position</a></h1>
 										<h2>$company</h2>
 										<h3>$date</h3>
 										<h4>$location</h4>
