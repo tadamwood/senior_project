@@ -105,9 +105,10 @@
 				</div>
 
 				<?php
-					$link = mysqli_connect("localhost", "
-tadamwoo_thomas", "~Mtw3301246", "tadamwoo_jobsearch");
-					mysqli_select_db($link, "search");
+					// $link = mysqli_connect("69.195.126.104", "tadamwoo_thomas", "~Mtw3301246", "tadamwoo_jobsearch");
+					$link = mysqli_connect("localhost", "tadamwoo_thomas", "~Mtw3301246")
+					or die("Can't connect to the db.");
+					mysqli_select_db($link, "tadamwoo_jobsearch");
 
 					if(isset($_POST['search'])) {
 						$job_title = $_POST['jobs'];

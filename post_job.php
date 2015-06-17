@@ -66,22 +66,42 @@
 			</div> 
 
 			<?php
-				$link = mysqli_connect("localhost", "
-tadamwoo_thomas", "~Mtw3301246", "tadamwoo_jobsearch");
-				mysqli_select_db($link, "search");
+				// $link = mysqli_connect("69.195.126.104", "tadamwoo_thomas", "~Mtw3301246", "tadamwoo_jobsearch");
+					// $link = mysqli_connect("69.195.126.104", "tadamwoo_thomas", "~Mtw3301246");
+					$link = mysqli_connect("localhost", "tadamwoo_thomas", "~Mtw3301246")
+					or die("Can't connect to the db.");
+					mysqli_select_db($link, "tadamwoo_jobsearch");
 
 				if(isset($_POST['submit'])) {
 
 					$position = $_POST['job_title'];
 					$company = $_POST['company'];
-					/*$date = $row['date'];*/
+					
 					$location = $_POST['job_location'];
-					/*$link = $row['link'];
-					$image = $row['image'];*/
+					
 					$desc = $_POST['desc'];
 
-					mysqli_query($link, "insert into search (position, company, location, desc) values ('$position', '$company', '$location', '$desc')");
+					mysqli_query($link, "insert into search (position, company, date, location, link, image, keywords, desc) values ('$position', '$company', ' ', '$location', ' ', ' ', ' ', '$desc')");
 					
+				/*if (isset($_POST['job_title'], $_POST['company'], $_POST['job_location'], $_POST['desc'] && $_POST['job_title'] !="" && $_POST['comapny'] !="" && $_POST['job_location'] !="" && $_POST['desc'] !="")) {
+					
+					$position = $_POST['job_title'];
+					$company = $_POST['company'];
+					$location = $_POST['job_location'];					
+					$desc = $_POST['desc'];
+
+					if ($query = $link->prepare("insert into search (position, company, location, desc) values ('$position', '$company', '$location', '$desc')")) {
+						$query->bind_param($position,$company,$location,$desc);
+						$query->execute();
+						$query->close();
+						return true;
+					} else {
+						return false;
+					}
+
+				} else {
+					return false;
+				}*/
 
 					// while($row=mysqli_fetch_array($run,MYSQLI_BOTH)) {
 					// 	//create the variables according to the table rows here
